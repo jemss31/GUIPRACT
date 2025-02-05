@@ -40,7 +40,7 @@ public class LogInForm extends javax.swing.JFrame {
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
         regis = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
 
         checkbox1.setLabel("checkbox1");
 
@@ -76,18 +76,18 @@ public class LogInForm extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel1.setText("Password:");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 330, 220, 60));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 330, 220, 60));
 
         jLabel3.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel3.setText("Username:");
-        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 260, 220, 60));
+        jPanel1.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 260, 220, 60));
 
         username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 usernameActionPerformed(evt);
             }
         });
-        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 270, 260, 50));
+        jPanel1.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 270, 260, 50));
 
         pass.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusGained(java.awt.event.FocusEvent evt) {
@@ -99,7 +99,7 @@ public class LogInForm extends javax.swing.JFrame {
                 passActionPerformed(evt);
             }
         });
-        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 340, 260, 50));
+        jPanel1.add(pass, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 340, 260, 50));
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/nenpo.png"))); // NOI18N
         jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(-120, 100, 860, 210));
@@ -110,7 +110,7 @@ public class LogInForm extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 410, 80, 30));
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 410, 80, 30));
 
         jButton2.setText("Log In");
         jButton2.addActionListener(new java.awt.event.ActionListener() {
@@ -118,7 +118,7 @@ public class LogInForm extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(580, 410, 80, 30));
+        jPanel1.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 410, 80, 30));
 
         regis.setFont(new java.awt.Font("Arial", 2, 14)); // NOI18N
         regis.setText("New User? Click Here to Register!");
@@ -127,11 +127,10 @@ public class LogInForm extends javax.swing.JFrame {
                 regisMouseClicked(evt);
             }
         });
-        jPanel1.add(regis, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 450, 220, 30));
+        jPanel1.add(regis, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 450, 220, 30));
 
-        jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/nenpo.png"))); // NOI18N
-        jLabel6.setText("jLabel5");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 270, 1330, 590));
+        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/gwapo.gif"))); // NOI18N
+        jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(-220, 420, 860, 280));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -219,8 +218,8 @@ public class LogInForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPasswordField pass;

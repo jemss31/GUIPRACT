@@ -47,6 +47,7 @@ public class RegisForm extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         asss = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/nenpo.png"))); // NOI18N
         jLabel7.setText("jLabel5");
@@ -147,7 +148,7 @@ public class RegisForm extends javax.swing.JFrame {
                 fnActionPerformed(evt);
             }
         });
-        jPanel1.add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 180, 260, 50));
+        jPanel1.add(fn, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 160, 260, 50));
 
         jLabel6.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
         jLabel6.setText("Username:");
@@ -161,8 +162,10 @@ public class RegisForm extends javax.swing.JFrame {
         jPanel1.add(asss, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 260, 50));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/nenpo.png"))); // NOI18N
-        jLabel10.setText("jLabel5");
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 270, 1330, 590));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -60, 1330, 590));
+
+        jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/asdasdasd.gif"))); // NOI18N
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 530, 260));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -271,6 +274,7 @@ public class RegisForm extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JTextField ln;
