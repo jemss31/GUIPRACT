@@ -42,12 +42,13 @@ public class RegisForm extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         uss = new javax.swing.JTextField();
-        emm = new javax.swing.JTextField();
+        Email = new javax.swing.JTextField();
         fn = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
-        asss = new javax.swing.JPasswordField();
+        RegPass = new javax.swing.JPasswordField();
         jLabel10 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
+        jCheckBox1 = new javax.swing.JCheckBox();
 
         jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/nenpo.png"))); // NOI18N
         jLabel7.setText("jLabel5");
@@ -106,6 +107,11 @@ public class RegisForm extends javax.swing.JFrame {
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 540, 80, 30));
 
         jButton2.setText("Register");
+        jButton2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton2MouseClicked(evt);
+            }
+        });
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
@@ -136,12 +142,12 @@ public class RegisForm extends javax.swing.JFrame {
         });
         jPanel1.add(uss, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 390, 260, 50));
 
-        emm.addActionListener(new java.awt.event.ActionListener() {
+        Email.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                emmActionPerformed(evt);
+                EmailActionPerformed(evt);
             }
         });
-        jPanel1.add(emm, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 260, 50));
+        jPanel1.add(Email, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 320, 260, 50));
 
         fn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -154,18 +160,35 @@ public class RegisForm extends javax.swing.JFrame {
         jLabel6.setText("Username:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(280, 380, 220, 60));
 
-        asss.addActionListener(new java.awt.event.ActionListener() {
+        RegPass.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                asssActionPerformed(evt);
+                RegPassActionPerformed(evt);
             }
         });
-        jPanel1.add(asss, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 260, 50));
+        RegPass.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                RegPassKeyPressed(evt);
+            }
+        });
+        jPanel1.add(RegPass, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 460, 260, 50));
 
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/nenpo.png"))); // NOI18N
-        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, -60, 1330, 590));
+        jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-30, -110, 1330, 590));
 
         jLabel8.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Pictires/asdasdasd.gif"))); // NOI18N
+        jLabel8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                jLabel8KeyPressed(evt);
+            }
+        });
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 400, 530, 260));
+
+        jCheckBox1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jCheckBox1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 480, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -183,7 +206,20 @@ public class RegisForm extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void lnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lnActionPerformed
-        // TODO add your handling code here:
+    String name = ln.getText();
+
+    // Regular expression to check for numbers and special characters
+    String regex = "^[a-zA-Z]+$"; // Only allows alphabets, no numbers or special characters.
+
+    // Check if the name matches the regular expression
+    if (!name.matches(regex)) {
+        // Show dialog if the name contains numbers or special characters
+        JOptionPane.showMessageDialog(null, "Last name should not contain numbers or special characters.");
+    } else {
+        // Proceed with the rest of your code if the validation passes
+    }
+
+// TODO add your handling code here:
     }//GEN-LAST:event_lnActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
@@ -197,10 +233,14 @@ public class RegisForm extends javax.swing.JFrame {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         if(fn.getText().isEmpty()
                 && ln.getText() .isEmpty()
-                && emm.getText().isEmpty() 
+                && Email.getText().isEmpty() 
                 && uss.getText().isEmpty() 
-                && asss.getText().isEmpty())
+                && RegPass.getText().isEmpty())
             JOptionPane.showMessageDialog(null, "All fields are Required!");
+        
+         LogInForm lif = new LogInForm();
+        lif.setVisible(true);
+        this.dispose();
             
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -212,17 +252,66 @@ public class RegisForm extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ussActionPerformed
 
-    private void emmActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_emmActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_emmActionPerformed
+    private void EmailActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EmailActionPerformed
+ String address = Email.getText().trim();
+   
+   String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
+    if (address.isEmpty()) {
+        JOptionPane.showMessageDialog(this, "Email cannot be empty!", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    } else if (!address.matches(emailRegex)) {
+        JOptionPane.showMessageDialog(this, "Invalid Email! Please enter a valid email address.", "Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
+                               
+    }//GEN-LAST:event_EmailActionPerformed
 
     private void fnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fnActionPerformed
-        // TODO add your handling code here:
+        String name = fn.getText();
+
+    String regex = "^[a-zA-Z]+$";
+
+    if (!name.matches(regex)) {
+        JOptionPane.showMessageDialog(null, "Name should not contain numbers or special characters.");
+    } else {
+    }
+
+// TODO add your handling code here:
     }//GEN-LAST:event_fnActionPerformed
 
-    private void asssActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_asssActionPerformed
+    private void RegPassActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RegPassActionPerformed
+ String password = new String(RegPass.getPassword());
+   
+    if (!password.matches("^(?=.*[A-Z])(?=.*[!@#$%^&*()_+\\-=\\[\\]{};':\"\\\\|,.<>\\/?])(?=.*\\d).{8,}$")) {
+        JOptionPane.showMessageDialog(this, "Invalid Password! Must be at least 8 characters long, contain one uppercase letter, one special character, and one number.", "Error", JOptionPane.ERROR_MESSAGE);
+        RegPass.setText("");
+    }
+                
+    }//GEN-LAST:event_RegPassActionPerformed
+
+    private void jCheckBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jCheckBox1ActionPerformed
+ if (jCheckBox1.isSelected()) {
+            RegPass.setEchoChar((char) 0);
+        } else {
+            RegPass.setEchoChar('*');
+        }
+                   
+
+            }//GEN-LAST:event_jCheckBox1ActionPerformed
+
+    private void jLabel8KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_jLabel8KeyPressed
         // TODO add your handling code here:
-    }//GEN-LAST:event_asssActionPerformed
+    }//GEN-LAST:event_jLabel8KeyPressed
+
+    private void jButton2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton2MouseClicked
+        LogInForm lif = new LogInForm();
+        lif.setVisible(true);
+        this.dispose();
+    }//GEN-LAST:event_jButton2MouseClicked
+
+    private void RegPassKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RegPassKeyPressed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_RegPassKeyPressed
 
     /**
      * @param args the command line arguments
@@ -260,12 +349,13 @@ public class RegisForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPasswordField asss;
-    private javax.swing.JTextField emm;
+    private javax.swing.JTextField Email;
+    private javax.swing.JPasswordField RegPass;
     private javax.swing.JTextField fn;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JCheckBox jCheckBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
